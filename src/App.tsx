@@ -5,7 +5,7 @@ import { NavBar, Search } from "./components";
 
 function App() {
 	return (
-		<div className="flex bg-MV-BLack h-full w-full pl-4 pt-4">
+		<div className="flex bg-MV-BLack h-full w-screen">
 			<NavBar />
 			<div className="flec flex-col">
 				<Search />
