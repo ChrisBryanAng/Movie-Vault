@@ -4,7 +4,7 @@ const Recommended = () => {
 	return (
 		<div className="flex flex-col space-y-4 text-white font-OutfitLight font-light text-2xl">
 			<p>Recommended for you</p>
-			<div className="grid grid-cols-2 lg:grid-cols-4 gap-y-16 w-full">
+			<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-16 w-full">
 				{Recommends?.map((rec, idx: number) => (
 					<div className="flex flex-col w-[300px] h-[280px]">
 						<img

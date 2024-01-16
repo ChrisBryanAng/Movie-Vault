@@ -10,3 +10,17 @@
 	box-sizing: border-box;
 	overflow-x: hidden;
 }
+
+*::-webkit-scrollbar {
+	height: 9px;
+	width: 9px;
+}
+
+*::-webkit-scrollbar-track {
+	border-radius: 90px;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #4b5563;
+	border-radius: 90px;
+}

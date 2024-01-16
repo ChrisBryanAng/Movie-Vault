@@ -1,4 +1,5 @@
-export { default as NavBar } from "./NavBar";
+export { default as SideNavBar } from "./SideNavBar";
+export { default as TopNavBar } from "./TopNavBar";
 export { default as Search } from "./Search";
 export { default as Trending } from "./Trending";
 export { default as Recommended } from "./Recommended";

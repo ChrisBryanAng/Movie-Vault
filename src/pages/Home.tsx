@@ -2,7 +2,7 @@ import { Trending, Recommended } from "../components";
 
 const Home = () => {
 	return (
-		<div className="flex flex-col gap-8 h-max w-[89vw]">
+		<div className="flex flex-col gap-8 h-max w-full ml-8">
 			<Trending />
 			<Recommended />
 		</div>

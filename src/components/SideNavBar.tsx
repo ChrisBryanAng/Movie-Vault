@@ -1,6 +1,6 @@
-const NavBar = () => {
+const SideNavBar = () => {
 	return (
-		<div className="sticky flex flex-col justify-between items-center px-4 py-6 bg-MV-Semi-Black h-[690px] w-[100px] mx-8 my-6 rounded-lg">
+		<div className="sticky hidden lg:flex flex-col justify-between items-center px-4 py-6 bg-MV-Semi-Black h-[690px] w-[100px] mx-8 my-6 rounded-lg">
 			<div className="flex flex-col justify-center items-center space-y-16">
 				<div className="flex justify-center h-fit w-[30px] items-center">
 					<img alt="logo" src="./assets/logo.svg" />
@@ -19,4 +19,4 @@ const NavBar = () => {
 	);
 };
 
-export default NavBar;
+export default SideNavBar;
