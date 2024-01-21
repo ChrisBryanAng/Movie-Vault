@@ -6,7 +6,7 @@ const Trending = () => {
 			<p>Trending</p>
 			<div className="flex w-max space-x-4">
 				{Trends?.map((trend, idx: number) => (
-					<div className="inline h-[200px] w-[410px]">
+					<div className="block h-[150px] w-[280px]">
 						<img
 							className="h-full w-full rounded-lg"
 							alt={`trend ${idx}`}
