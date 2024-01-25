@@ -2,11 +2,11 @@ import Trends from "../utils/data.json";
 
 const Trending = () => {
 	return (
-		<div className="flex flex-col w-full space-y-4 text-2xl font-OutfitLight font-light text-white">
-			<p>Trending</p>
-			<div className="flex w-max space-x-4">
+		<div className="flex flex-col w-full space-y-4 font-OutfitLight font-light text-white">
+			<p className="text-2xl md:text-3xl">Trending</p>
+			<div className="flex w-max space-x-4 md:space-x-10">
 				{Trends?.map((trend, idx: number) => (
-					<div className="relative h-[150px] w-[280px]">
+					<div className="relative h-[150px] w-[280px] md:h-[220px] md:w-[460px]">
 						<div className="absolute flex flex-col p-2 justify-between h-full w-full">
 							<div className="flex justify-center items-center self-end bg-black/40 rounded-full h-8 w-8">
 								<img alt="bookmark" src="assets/icon-bookmark-empty.svg" />
@@ -30,13 +30,13 @@ const Trending = () => {
 									<p>•</p>
 									<p>{trend.rating}</p>
 								</div>
-								<p className="text-lg font-normal">{trend.title}</p>
+								<p className="text-lg md:text-2xl font-normal">{trend.title}</p>
 							</div>
 						</div>
 						<img
 							className="block h-full w-full rounded-lg"
 							alt={`trend ${idx}`}
-							src={trend.thumbnail.trending?.small}
+							src={trend.thumbnail.trending?.large}
 						/>
 					</div>
 				))}

@@ -1,6 +1,6 @@
 const TopNavBar = () => {
 	return (
-		<div className="sticky flex lg:hidden justify-between items-center px-4 bg-MV-Semi-Black w-full h-[80px] mb-5 rounded-lg">
+		<div className="sticky flex lg:hidden justify-between items-center px-4 bg-MV-Semi-Black w-full md:w-[96%] h-[80px] mb-5 md:ml-4 md:mt-5 md:rounded-lg">
 			<div className="flex justify-center h-fit w-[30px] items-center">
 				<img alt="logo" src="./assets/logo.svg" />
 			</div>
