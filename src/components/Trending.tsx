@@ -3,10 +3,10 @@ import Trends from "../utils/data.json";
 const Trending = () => {
 	return (
 		<div className="flex flex-col w-full space-y-4 font-OutfitLight font-light text-white">
-			<p className="text-2xl md:text-3xl">Trending</p>
+			<p className="text-2xl md:text-3xl overflow-hidden">Trending</p>
 			<div className="flex w-max space-x-4 md:space-x-10">
 				{Trends?.map((trend, idx: number) => (
-					<div className="relative h-[150px] w-[280px] md:h-[220px] md:w-[460px]">
+					<div className="relative h-[150px] w-[280px] md:h-[220px] md:w-[460px] lg:h-[250px] lg:w-[500px]">
 						<div className="absolute flex flex-col p-2 justify-between h-full w-full">
 							<div className="flex justify-center items-center self-end bg-black/40 rounded-full h-8 w-8">
 								<img alt="bookmark" src="assets/icon-bookmark-empty.svg" />

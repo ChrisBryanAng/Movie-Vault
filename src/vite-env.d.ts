@@ -41,3 +41,9 @@ interface IShow {
 	isBookmarked: boolean;
 	isTrending: boolean;
 }
+
+interface IRoute {
+	name: string;
+	icon: () => React.JSX.Element;
+	path: string;
+}

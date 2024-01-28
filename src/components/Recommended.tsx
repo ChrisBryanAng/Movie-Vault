@@ -6,7 +6,7 @@ const Recommended = () => {
 			<p className="text-2xl md:text-3xl overflow-hidden">
 				Recommended for you
 			</p>
-			<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-y-16 h-full w-full">
+			<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-x-10 h-full w-full">
 				{Recommends?.map((rec, idx: number) => (
 					<div
 						key={rec.title}

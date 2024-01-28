@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 
-import { Home } from "./pages";
+import { Home, Movies, Tvshows, Bookmarks } from "./pages";
 import { SideNavBar, TopNavBar, Search } from "./components";
 
 function App() {
@@ -12,6 +12,9 @@ function App() {
 				<Search />
 				<Routes>
 					<Route path="/" element={<Home />} />
+					<Route path="/Movies" element={<Movies />} />
+					<Route path="/Tvshows" element={<Tvshows />} />
+					<Route path="/Bookmarks" element={<Bookmarks />} />
 				</Routes>
 			</div>
 		</div>
