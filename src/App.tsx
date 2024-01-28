@@ -7,7 +7,7 @@ function App() {
 	return (
 		<div className="flex bg-MV-BLack h-full w-full">
 			<SideNavBar />
-			<div className="flec flex-col w-full">
+			<div className="flec flex-col h-screen w-full">
 				<TopNavBar />
 				<Search />
 				<Routes>

@@ -28,7 +28,14 @@ const MovieCard = ({ movie }: IMovieCard) => {
 			className="relative flex flex-col m-auto w-full h-[200px] md:h-[250px] lg:h-[260px]"
 		>
 			<div className="absolute z-10 cursor-pointer flex justify-center items-center right-2 top-2 bg-black/40 rounded-full h-8 w-8">
-				<img alt="bookmark" src="assets/icon-bookmark-empty.svg" />
+				<img
+					alt="bookmark"
+					src={
+						movie.isBookmarked
+							? "assets/icon-bookmark-full.svg"
+							: "assets/icon-bookmark-empty.svg"
+					}
+				/>
 			</div>
 			<div
 				onMouseEnter={() => showPlay(movie.title)}
