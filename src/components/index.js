@@ -11,3 +11,5 @@ export { default as HomeSvg } from "./HomeSvg";
 export { default as MoviesSvg } from "./MoviesSvg";
 export { default as TvshowsSvg } from "./TvshowsSvg";
 export { default as BookmarkSvg } from "./BookmarkSvg";
+export { default as TrendingList } from "./TrendingList";
+export { default as RecommendedList } from "./RecommendedList";
