@@ -1,5 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 
+import Logo from "../assets/logo.svg";
+import Avatar from "../assets/image-avatar.png";
 import { HomeSvg, MoviesSvg, TvshowsSvg, BookmarkSvg } from "../components";
 
 const TopNavBar = () => {
@@ -31,7 +33,7 @@ const TopNavBar = () => {
 	return (
 		<div className="sticky flex lg:hidden justify-between items-center px-4 bg-MV-Semi-Black w-full md:w-[96%] h-[80px] mb-5 md:ml-4 md:mt-5 md:rounded-lg">
 			<div className="flex justify-center h-fit w-[30px] items-center">
-				<img alt="logo" src="./assets/logo.svg" />
+				<img alt="logo" src={Logo} />
 			</div>
 			<div className="flex justify-center space-x-8 h-fit w-max items-center">
 				{routes.map((route) => (
@@ -49,7 +51,7 @@ const TopNavBar = () => {
 				))}
 			</div>
 			<div className="flex justify-end h-12 w-12">
-				<img alt="profile-pic" src="./assets/image-avatar.png" />
+				<img alt="profile-pic" src={Avatar} />
 			</div>
 		</div>
 	);

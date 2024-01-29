@@ -1,6 +1,10 @@
 import { useState } from "react";
 
 import PlayButton from "./PlayButton";
+import BookmarkFull from "../assets/icon-bookmark-full.svg";
+import BookmarkEmpty from "../assets/icon-bookmark-empty.svg";
+import MovieIcon from "../assets/icon-category-movie.svg";
+import TvIcon from "../assets/icon-category-tv.svg";
 
 interface ITrendingList {
 	trends: any;
@@ -35,7 +39,10 @@ const TrendingList = ({ trends }: ITrendingList) => {
 
 						<div className="absolute flex flex-col p-2 justify-between h-full w-full">
 							<div className="flex justify-center items-center self-end cursor-pointer bg-black/40 rounded-full h-8 w-8">
-								<img alt="bookmark" src="assets/icon-bookmark-empty.svg" />
+								<img
+									alt="bookmark"
+									src={trend?.isBookmarked ? BookmarkFull : BookmarkEmpty}
+								/>
 							</div>
 							<div className="pl-2 pb-1">
 								<div className="flex items-center space-x-2 mb-1 text-gray-300 text-sm">
@@ -44,11 +51,7 @@ const TrendingList = ({ trends }: ITrendingList) => {
 									<div className="flex justify-center items-center gap-2">
 										<img
 											alt={trend.category}
-											src={
-												trend.category === "Movie"
-													? "./assets/icon-category-movie.svg"
-													: "./assets/icon-category-tv.svg"
-											}
+											src={trend.category === "Movie" ? MovieIcon : TvIcon}
 											className="h-4 w-4"
 										/>
 										<p>{trend.category}</p>
