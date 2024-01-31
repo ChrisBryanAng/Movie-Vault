@@ -1,18 +1,31 @@
 import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 
-import { Home, Movies, Tvshows, Bookmarks, Searched } from "./pages";
+import {
+	Home,
+	Movies,
+	Tvshows,
+	Bookmarks,
+	Searched,
+	Login,
+	SignUp,
+} from "./pages";
 import { SideNavBar, TopNavBar, Search } from "./components";
 
 function App() {
+	const location = useLocation();
 	const [searched, setSearched] = useState("");
+
+	const ifPathname =
+		location.pathname !== "/Login" && location.pathname !== "/SignUp";
 
 	return (
 		<div className="flex bg-MV-BLack h-full w-full">
-			<SideNavBar />
+			{ifPathname && <SideNavBar />}
 			<div className="flec flex-col h-screen w-full">
-				<TopNavBar />
-				<Search searched={searched} setSearched={setSearched} />
+				{ifPathname && <TopNavBar />}
+				{ifPathname && <Search searched={searched} setSearched={setSearched} />}
+
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/Movies" element={<Movies />} />
@@ -22,6 +35,8 @@ function App() {
 						path="/SearchResults/:search"
 						element={<Searched searched={searched} />}
 					/>
+					<Route path="/Login" element={<Login />} />
+					<Route path="/SignUp" element={<SignUp />} />
 				</Routes>
 			</div>
 		</div>

@@ -16,3 +16,4 @@ export { default as RecommendedList } from "./RecommendedList";
 export { default as PlayButton } from "./PlayButton";
 export { default as MovieCard } from "./MovieCard";
 export { default as SearchedList } from "./SearchedList";
+export { default as Input } from "./Input";

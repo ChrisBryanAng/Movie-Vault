@@ -42,8 +42,8 @@ interface IShow {
 	isTrending: boolean;
 }
 
-interface IRoute {
-	name: string;
-	icon: () => React.JSX.Element;
-	path: string;
-}
+type FormFields = {
+	email: string;
+	password: string;
+	confirmpassword: string;
+};

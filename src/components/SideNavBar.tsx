@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import Logo from "../assets/logo.svg";
 import Avatar from "../assets/image-avatar.png";
 import { HomeSvg, MoviesSvg, TvshowsSvg, BookmarkSvg } from "../components";
+import ProfileDropdown from "./ProfileDropdown";
 
 const SideNavBar = () => {
 	const location = useLocation();
+	const [isOpen, setIsOpen] = useState(false);
 
 	const routes = [
 		{
@@ -30,8 +33,18 @@ const SideNavBar = () => {
 		},
 	];
 
+	const handleIsOpen = () => {
+		setIsOpen(!isOpen);
+	};
+
+	const handleDivBlur = (event: any) => {
+		if (!event.currentTarget.contains(event.relatedTarget)) {
+			setIsOpen(false);
+		}
+	};
+
 	return (
-		<div className="sticky hidden lg:flex flex-col justify-between items-center px-4 py-6 bg-MV-Semi-Black h-[690px] w-[100px] mx-8 my-6 rounded-lg">
+		<div className="sticky z-50 top-4 overflow-visible hidden lg:flex flex-col justify-between items-center px-4 py-6 bg-MV-Semi-Black h-[690px] w-[100px] mx-8 my-6 rounded-lg">
 			<div className="flex flex-col justify-center items-center space-y-16">
 				<div className="flex justify-center h-fit w-[30px] items-center">
 					<img alt="logo" src={Logo} />
@@ -52,8 +65,14 @@ const SideNavBar = () => {
 					))}
 				</div>
 			</div>
-			<div className="flex justify-end h-12 w-12 border-[1px] border-white rounded-full">
+			<div
+				tabIndex={0}
+				onBlur={handleDivBlur}
+				onClick={handleIsOpen}
+				className="flex justify-end h-12 w-12 border-[1px] border-white rounded-full"
+			>
 				<img alt="profile-pic" src={Avatar} className="block h-full w-full" />
+				{isOpen && <ProfileDropdown />}
 			</div>
 		</div>
 	);
