@@ -17,7 +17,7 @@ const Login = () => {
 		await new Promise((resolve) => setTimeout(resolve, 1000));
 	};
 
-	const onSubmit: SubmitHandler<FormFields> = (data) => {
+	const onSubmit: SubmitHandler<FormFields> = (data: FormFields) => {
 		try {
 			delay();
 			console.log(data);

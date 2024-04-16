@@ -45,5 +45,5 @@ interface IShow {
 type FormFields = {
 	email: string;
 	password: string;
-	confirmpassword: string;
+	confirmpassword?: string;
 };
