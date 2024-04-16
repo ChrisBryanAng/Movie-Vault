@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -14,9 +13,13 @@ const Login = () => {
 		formState: { errors, isSubmitting },
 	} = useForm<FormFields>();
 
-	const onSubmit: SubmitHandler<FormFields> = handleSubmit(async (data) => {
+	const delay = async () => {
+		await new Promise((resolve) => setTimeout(resolve, 1000));
+	};
+
+	const onSubmit: SubmitHandler<FormFields> = (data) => {
 		try {
-			await new Promise((resolve) => setTimeout(resolve, 1000));
+			delay();
 			console.log(data);
 			navigate("/");
 		} catch (error) {
@@ -24,7 +27,7 @@ const Login = () => {
 				message: "This email is already taken.",
 			});
 		}
-	});
+	};
 	return (
 		<div className="flex flex-col space-y-[90px] items-center w-full h-full p-6">
 			<div className="h-8 w-10 mt-12 rounded-tl-lg rounded-bl-lg rounded-br-lg">
