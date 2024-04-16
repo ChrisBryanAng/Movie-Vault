@@ -1,10 +1,11 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Logo from "../assets/logo.svg";
 import { Input } from "../components";
 
 const Login = () => {
+	const navigate = useNavigate();
 	const {
 		register,
 		handleSubmit,
@@ -16,6 +17,7 @@ const Login = () => {
 		try {
 			await new Promise((resolve) => setTimeout(resolve, 1000));
 			console.log(data);
+			navigate("/");
 		} catch (error) {
 			setError("root", {
 				message: "This email is already taken.",

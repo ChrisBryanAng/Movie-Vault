@@ -24,3 +24,18 @@
 	background-color: #4b5563;
 	border-radius: 90px;
 }
+
+/* container */
+.carousel-list {
+	@apply !w-full !h-[150px] md:!h-[220px] lg:!h-[250px];
+}
+
+/* slider container */
+/* .carousel-track {
+	@apply ;
+} */
+
+/* slider item */
+.carousel-item {
+	@apply !min-w-max h-full rounded-lg overflow-clip;
+}

@@ -9,6 +9,7 @@ import {
 	Searched,
 	Login,
 	SignUp,
+	NotFound,
 } from "./pages";
 import { SideNavBar, TopNavBar, Search } from "./components";
 
@@ -37,6 +38,8 @@ function App() {
 					/>
 					<Route path="/Login" element={<Login />} />
 					<Route path="/SignUp" element={<SignUp />} />
+
+					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</div>
 		</div>
