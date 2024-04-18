@@ -1,4 +1,4 @@
-import PlayIcon from "../assets/icon-play.svg";
+import PlayIcon from "/assets/icon-play.svg";
 
 const PlayButton = () => {
 	return (

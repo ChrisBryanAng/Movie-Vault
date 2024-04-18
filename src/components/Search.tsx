@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import SearchIcon from "../assets/icon-search.svg";
+import SearchIcon from "/assets/icon-search.svg";
 
 const Search = ({
 	searched,

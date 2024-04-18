@@ -18,7 +18,7 @@ const SearchedList = ({ movies, query }: { movies: any; query: string }) => {
 						Found {searchedMovies?.length} results for '{query}'
 					</p>
 					<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-x-10 h-full w-full">
-						{searchedMovies.map((movie: IShow) => (
+						{searchedMovies?.map((movie: IShow) => (
 							<MovieCard movie={movie} key={movie.title} />
 						))}
 					</div>

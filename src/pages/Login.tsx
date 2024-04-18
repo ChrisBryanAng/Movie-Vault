@@ -2,7 +2,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 
-import Logo from "../assets/logo.svg";
+import Logo from "/assets/logo.svg";
 import { Input } from "../components";
 
 const Login = () => {

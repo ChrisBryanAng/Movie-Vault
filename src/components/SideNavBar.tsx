@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import Logo from "../assets/logo.svg";
-import Avatar from "../assets/image-avatar.png";
+import Logo from "/assets/logo.svg";
+import Avatar from "/assets/image-avatar.png";
 import { HomeSvg, MoviesSvg, TvshowsSvg, BookmarkSvg } from "../components";
 import ProfileDropdown from "./ProfileDropdown";
 
