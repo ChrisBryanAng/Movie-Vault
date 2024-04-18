@@ -1,4 +1,5 @@
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 
 import Logo from "../assets/logo.svg";
@@ -6,28 +7,28 @@ import { Input } from "../components";
 
 const Login = () => {
 	const navigate = useNavigate();
-	const {
-		register,
-		handleSubmit,
-		setError,
-		formState: { errors, isSubmitting },
-	} = useForm<FormFields>();
+	const formik = useFormik({
+		initialValues: {
+			email: "",
+			password: "",
+		},
 
-	const delay = async () => {
-		await new Promise((resolve) => setTimeout(resolve, 1000));
-	};
+		// Validate Form
+		validationSchema: Yup.object({
+			email: Yup.string()
+				.email("Invalid Email Address")
+				.required("Can't be empty!"),
+			password: Yup.string().required("Can't be empty!"),
+		}),
 
-	const onSubmit: SubmitHandler<FormFields> = (data: FormFields) => {
-		try {
-			delay();
-			console.log(data);
+		// Submit form
+		onSubmit: async (values) => {
+			await new Promise((resolve) => setTimeout(resolve, 1000));
+			console.log(values);
 			navigate("/");
-		} catch (error) {
-			setError("root", {
-				message: "This email is already taken.",
-			});
-		}
-	};
+		},
+	});
+
 	return (
 		<div className="flex flex-col space-y-[90px] items-center w-full h-full p-6">
 			<div className="h-8 w-10 mt-12 rounded-tl-lg rounded-bl-lg rounded-br-lg">
@@ -35,7 +36,7 @@ const Login = () => {
 			</div>
 
 			<form
-				onSubmit={handleSubmit(onSubmit)}
+				onSubmit={formik.handleSubmit}
 				className="w-full md:w-[70%] lg:w-[30%]"
 			>
 				<div className="flex flex-col gap-8 bg-MV-Semi-Black rounded-lg px-6 py-8">
@@ -46,24 +47,30 @@ const Login = () => {
 						id="email"
 						type="text"
 						placeholder="Email Address"
-						register={register}
-						isError={errors.email}
-						errorMessage={errors.email?.message}
+						value={formik.values.email}
+						onChange={formik.handleChange}
+						onBlur={formik.handleBlur}
+						isError={formik.errors.email}
+						errorMessage={formik.errors.email}
+						isTouched={formik.touched.email}
 					/>
 					<Input
 						id="password"
 						type="text"
 						placeholder="Password"
-						register={register}
-						isError={errors.password}
-						errorMessage={errors.password?.message}
+						value={formik.values.password}
+						onChange={formik.handleChange}
+						onBlur={formik.handleBlur}
+						isError={formik.errors.password}
+						errorMessage={formik.errors.password}
+						isTouched={formik.touched.password}
 					/>
 					<button
 						type="submit"
-						disabled={isSubmitting}
+						disabled={formik.isSubmitting}
 						className="mt-2 cusrsor-pointer hover:bg-white bg-MV-Red rounded-md p-4 text-white hover:text-black font-OutfitLight font-light text-base text-center"
 					>
-						{isSubmitting ? "Submitting..." : "Log in to your Account"}
+						{formik.isSubmitting ? "Submitting..." : "Log in to your Account"}
 					</button>
 					<p className="flex text-white self-center text-base">
 						Don't have an account? &nbsp;{" "}
